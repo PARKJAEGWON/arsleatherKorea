@@ -1,0 +1,347 @@
+.page-size {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.page-size select {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.admin-select {
+    padding: 5px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.admin-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.order-number-link {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.order-number-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.detail-section {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.detail-section h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+/* 일반 정보 섹션 테이블 스타일 */
+.detail-section .detail-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.detail-section .detail-table th,
+.detail-section .detail-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.detail-section .detail-table th {
+    background-color: #f8f9fa;
+    width: 15%;
+    text-align: left;
+    font-weight: 600;
+}
+
+.detail-section .detail-table td {
+    width: 35%;
+}
+
+.product-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.product-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.detail-order-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.detail-order-section h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* 주문 상품 섹션 테이블 스타일 */
+.detail-order-section .detail-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.detail-order-section .detail-table th,
+.detail-order-section .detail-table td {
+    padding: 14px 8px;
+    border: 1px solid #e0e0e0;
+    font-size: 15px;
+}
+
+.detail-order-section .detail-table th {
+    background: #f3f6fa;
+    color: #222;
+    font-weight: 700;
+    text-align: center;
+}
+
+.detail-order-section .detail-table td {
+    text-align: center;
+    background: #fff;
+}
+
+.detail-order-section .detail-table img {
+    border-radius: 6px;
+    border: 1px solid #eee;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.detail-order-section .detail-table tfoot tr th[colspan="5"] {
+    background: #f8f9fa;
+    font-weight: 600;
+    text-align: center;
+}
+
+.detail-order-section .detail-table tfoot tr td:last-child {
+    text-align: right;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 기존 .detail-table 스타일보다 더 구체적으로! */
+.order-product-table th,
+.order-product-table td {
+    padding: 16px 8px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    font-size: 15px;
+}
+
+.order-product-table th {
+    background: #f3f6fa;
+    color: #222;
+    font-weight: 700;
+}
+
+.order-product-table td {
+    text-align: center;
+}
+
+.order-product-table img {
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+/* 
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.page-link {
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+}
+.page-link.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+.page-size {
+    text-align: center;
+    margin: 10px 0;
+}
+.page-size select {
+    padding: 5px;
+    border-radius: 4px;
+}
+.admin-select {
+    padding: 5px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+.admin-select:focus {
+    outline: none;
+    border-color: #007bff;
+} */
+
+.order-cancel-status {
+    color: #d32f2f;
+}
+
+/* 회원 설명 스타일 */
+.member-description-area {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.description-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.description-display p {
+    margin: 0;
+    padding: 10px;
+    color: #666;
+    flex-grow: 1;
+}
+
+.admin-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* 상품준비중 */
+.order-status[data-status="0"] {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 배송중 */
+.order-status[data-status="1"] {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 배송완료 */
+.order-status[data-status="2"] {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 구매확정 */
+.order-status[data-status="3"] {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 반품 처리 중 */
+.order-status[data-status="6"] {
+    color: #e74c3c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 반품 완료 */
+.order-status[data-status="7"] {
+    color: #143ef7;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 취소 처리 중, 주문취소 */
+.order-status[data-status="8"] {
+    color: #e74c3c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.order-status[data-status="9"] {
+    color: #143ef7;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+select 옵션 스타일링
+
+.admin-select option[value="0"] {
+    color: #333; 
+    font-weight: bold;
+}
+
+.admin-select option[value="1"] {
+    color: #333;
+    font-weight: bold;
+}
+
+.admin-select option[value="2"] {
+    color: #333;
+    font-weight: bold;
+}
+
+.admin-select option[value="3"] {
+    color: #333;
+    font-weight: bold;
+}
+
+.admin-select option[value="6"] {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.admin-select option[value="7"] {
+    color: #143ef7;
+    font-weight: bold;
+}
+
+.admin-select option[value="8"] {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.admin-select option[value="9"] {
+    color: #143ef7;
+    font-weight: bold;
+}
+

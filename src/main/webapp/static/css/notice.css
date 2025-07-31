@@ -1,0 +1,82 @@
+.notice-list-container {
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+    padding: 2rem 0 1rem 0;
+}
+
+.notice-list-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.notice-list-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.notice-list-table th, .notice-list-table td {
+    padding: 1rem 0.5rem;
+    text-align: left;
+}
+
+.notice-list-table th {
+    border-bottom: 2px solid #222;
+    font-size: 1.1rem;
+}
+
+.notice-list-table td {
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+
+.notice-title-link {
+    color: #222;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.notice-title-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.top-notice { 
+    font-weight: bold; 
+    background: #f8f8fc; 
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0;
+}
+
+.pagination a {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination a.active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+@media (max-width: 600px) {
+    .notice-list-container { 
+        padding: 1rem 0.5rem; 
+    }
+    .notice-list-title { 
+        font-size: 1.3rem; 
+    }
+    .notice-list-table th, .notice-list-table td { 
+        padding: 0.7rem 0.2rem; 
+        font-size: 0.95rem; 
+    }
+} 

@@ -1,0 +1,128 @@
+.about-container {
+    max-width: 2000px;
+    margin: 60px auto 0 auto;
+    padding: 50px 20px;
+}
+
+.about-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 모든 섹션 공통 스타일 */
+section {
+    margin-bottom: 150px;
+}
+
+/* 중앙 정렬된 인트로 텍스트 */
+.intro-text {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.center-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* 기업소개 타이틀 스타일 */
+.center-text > :first-child {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* 인용구 스타일 */
+.center-text > :nth-child(3) {
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* 콘텐츠 섹션 공통 스타일 */
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+/* 텍스트 콘텐츠 */
+.text-content {
+    text-align: center;
+}
+
+.text-content h2 {
+    font-size: 26px;  /* 원하는 크기로 수정 가능 */
+    color: #1c2b85;
+    /* margin-bottom: 25px; */
+    line-height: 1.5;
+    font-weight: 500;
+    letter-spacing: -1px;  /* 글자 간격 조절: 음수값은 좁히기, 양수값은 넓히기 */
+}
+
+
+
+.text-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+    word-spacing: 1px;
+}
+
+/* 이미지 콘텐츠 */
+.image-content {
+    flex: 1;
+    max-width: 45%;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 브랜드 섹션 */
+.brand-section {
+    text-align: center;
+}
+
+.brand-title {
+    margin-bottom: 60px;
+}
+
+.brand-title h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.brand-title p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* 팀 이미지 */
+.team-image {
+    margin-bottom: 60px;
+}
+
+.team-image img {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* 하단 텍스트 */
+.bottom-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}

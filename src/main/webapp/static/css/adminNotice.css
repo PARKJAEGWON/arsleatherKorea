@@ -1,0 +1,139 @@
+.notice-create-container {
+    padding: 20px;
+}
+
+.notice-create-form {
+    width: 100%;
+    margin: 0;
+}
+
+.notice-status-select {
+    display: flex;
+    /* align-items: center; */
+    justify-content: flex-end;
+    gap: 8 px;
+    margin: 12px;
+    margin-bottom: 20px;
+}
+
+.notice-status-select span {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.notice-status-select select {
+    padding: 2px 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 0.9em;
+    width: 80px;
+    height: 24px;
+    background-color: #fff;
+}
+
+.notice-top-checkbox span {
+    font-size: 0.95em;
+    color: #222;
+}
+
+.notice-top-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 20px;
+}
+
+.form-group {
+    margin: 0;
+}
+
+.form-group.title-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.form-group label {
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.form-group input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 1em;
+}
+
+.button-group {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#noticeContent {
+    width: 100%;
+    min-height: 800px;
+}
+
+.notice-simple-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 32px;
+}
+
+.notice-simple-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px 0 0;
+    font-size: 1.08rem;
+    border-bottom: 1px solid #eee;
+    min-height: 44px;
+}
+
+.notice-title-link {
+    color: #000000;
+    text-decoration: none;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 10px;
+}
+
+.notice-title-link:hover {
+    text-decoration: underline;
+    color: #2952a3;
+}
+
+.notice-date {
+    color: #888;
+    font-size: 0.98rem;
+    /* margin-left: 18px; */
+    flex-shrink: 0;
+}
+
+/* 연한 공지 스타일 (상태 9) */
+.notice-simple-item.dimmed-notice .notice-title-link {
+    color: #888;
+}
+
+.notice-simple-item.dimmed-notice .notice-date {
+    color: #aaa;
+}
+
+.notice-divider {
+    border: none;
+    border-top: 1.5px solid #e0e0e0;
+    margin: 18px 0 24px 0;
+    height: 1px;
+    background-color: #eee;
+} 
+.notice-meta {
+    text-align: right;
+}

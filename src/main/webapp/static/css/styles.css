@@ -1,0 +1,648 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 모든 메인 컨테이너에 적용될 공통 스타일 */
+.order-flex-wrapper,
+.order-detail-wrapper,
+.center-container,
+.my-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 리스트 페이지 컨테이너 스타일 */
+.notice-list-container,
+.order-list-wrapper {
+    flex: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 푸터 스타일 */
+.main-footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Header Styles */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.nav-left .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.main-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+    /* text-transform: uppercase; 소문자도 대문자로 변환시켜줌*/
+    letter-spacing: 1px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+    margin-top: 60px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #333;
+}
+
+/* Featured Products */
+.featured-products,
+.featured-products-season,
+.featured-products-men,
+.featured-products-women {
+    padding: 2rem 2%;
+    margin: 0 auto;
+}
+
+.featured-products h2,
+.featured-products-season h2,
+.featured-products-men h2,
+.featured-products-women h2 {
+    font-size: 32px;
+    text-align: center;
+    /* margin-bottom: 2rem; */
+}
+
+.featured-products .recommended-swiper,
+.featured-products-season .recommended-swiper,
+.featured-products-men .recommended-swiper,
+.featured-products-women .recommended-swiper {
+    padding: 0 40px;
+}
+
+.featured-products .swiper-slide,
+.featured-products-season .swiper-slide,
+.featured-products-men .swiper-slide,
+.featured-products-women .swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.featured-products .product-card,
+.featured-products-season .product-card,
+.featured-products-men .product-card,
+.featured-products-women .product-card {
+    max-width: 397px;
+    margin: 0 auto;
+}
+
+.featured-products .product-image,
+.featured-products-season .product-image,
+.featured-products-men .product-image,
+.featured-products-women .product-image {
+    width: 100%;
+    height: 397px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.featured-products .swiper-button-prev,
+.featured-products .swiper-button-next,
+.featured-products-season .swiper-button-prev,
+.featured-products-season .swiper-button-next,
+.featured-products-men .swiper-button-prev,
+.featured-products-men .swiper-button-next,
+.featured-products-women .swiper-button-prev,
+.featured-products-women .swiper-button-next {
+    color: #222;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    width: 44px;
+    height: 44px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.featured-products .swiper-button-prev,
+.featured-products-season .swiper-button-prev,
+.featured-products-men .swiper-button-prev,
+.featured-products-women .swiper-button-prev {
+    left: 10px;
+}
+
+.featured-products .swiper-button-next,
+.featured-products-season .swiper-button-next,
+.featured-products-men .swiper-button-next,
+.featured-products-women .swiper-button-next {
+    right: 10px;
+}
+
+.featured-products .swiper-button-prev:after,
+.featured-products .swiper-button-next:after,
+.featured-products-season .swiper-button-prev:after,
+.featured-products-season .swiper-button-next:after,
+.featured-products-men .swiper-button-prev:after,
+.featured-products-men .swiper-button-next:after,
+.featured-products-women .swiper-button-prev:after,
+.featured-products-women .swiper-button-next:after {
+    font-size: 18px;
+}
+
+.split-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+.split-image {
+    flex: 0.4;
+    max-width: 40%;
+}
+
+.split-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.split-content {
+    flex: 0.6;
+    max-width: 60%;
+}
+
+.split-content .featured-products {
+    padding: 0;
+}
+
+.split-content .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.split-content .swiper-slide {
+    width: 100% !important;
+}
+
+@media (max-width: 768px) {
+    .split-section {
+        flex-direction: column;
+    }
+    
+    .split-image,
+    .split-content {
+        max-width: 100%;
+    }
+}
+
+/* Footer */
+.main-footer {
+    background-color: #000;
+    color: #888;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-links {
+    margin: 15px 0;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* 커스텀 알림창 */
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    width: 300px;
+    max-width: 90vw;
+}
+
+.custom-alert .message {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.custom-alert .close-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 20px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.custom-alert .close-btn:hover {
+    background: #333;
+}
+
+/* 확인/취소용 커스텀 알림창 */
+.examine-custom-alert {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    width: 300px;
+    max-width: 90vw;
+}
+.examine-custom-alert .message {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.examine-custom-alert .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+.examine-custom-alert .close-btn {
+    display: inline-block;
+    margin: 0;
+    padding: 5px 20px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.examine-custom-alert .close-btn:hover {
+    background: #333;
+}
+
+/* Swiper 슬라이드 영역 스타일 (BANDA Leather 스타일) */
+.hero-swiper {
+    width: 100vw;
+    aspect-ratio: 4 / 3;
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.hero-swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+.hero-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+@media (max-width: 768px) {
+    .hero-swiper {
+        aspect-ratio: 1.5 / 1;
+        max-width: 100vw;
+    }
+}
+
+/* Swiper 페이지네이션 점 색상 하얀색으로 변경 */
+.hero-swiper .swiper-pagination-bullet {
+    background: #fff !important;
+    opacity: 0.8;
+}
+.hero-swiper .swiper-pagination-bullet-active {
+    background: #fff !important;
+    opacity: 1;
+}
+
+/* 슬라이더 버튼 스타일 */
+.hero-section .swiper-button-prev,
+.hero-section .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section .swiper-button-prev {
+    left: 20px;
+}
+
+.hero-section .swiper-button-next {
+    right: 20px;
+}
+
+.hero-section .swiper-button-prev:after,
+.hero-section .swiper-button-next:after {
+    font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 1rem 3%;
+    }
+
+    .main-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 0;
+        gap: 1.5rem;
+    }
+
+    .nav-left {
+        flex: 1;
+    }
+
+    .nav-right {
+        gap: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    /* 컨테이너 반응형 조정 */
+    .order-flex-wrapper,
+    .order-detail-wrapper,
+    .center-container,
+    .my-container {
+        padding: 20px 3%;
+        margin-top: 120px;
+    }
+
+    /* 카드형 UI 반응형 조정 */
+    .my-cards {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .my-card {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+/* 더 작은 모바일 화면 대응 */
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 1rem 2%;
+    }
+
+    .main-menu {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .nav-left .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-right {
+        gap: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* 공통 아이콘 스타일 */
+.agree-icon {
+  color: #222;
+}
+.disagree-icon {
+  color: #aaa;
+}
+.hidden {
+  display: none !important;
+}
+
+/* 이용약관 모달 스타일 */
+.terms-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.terms-modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 50px auto;
+    padding: 0;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.terms-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.terms-modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.terms-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.terms-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.terms-content {
+    color: #333;
+    line-height: 1.6;
+}
+
+.terms-content h3 {
+    margin: 20px 0 10px;
+    font-size: 18px;
+    color: #222;
+}
+
+.terms-content p {
+    margin: 10px 0;
+}
+
+.terms-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.terms-content li {
+    margin: 5px 0;
+}
+
+/* 모달이 열릴 때 애니메이션 효과 */
+.terms-modal.show {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+} 
+
+.index-product-description {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 2rem auto;
+    max-width: 70%;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    word-spacing: 2px;
+} 

@@ -1,0 +1,95 @@
+/* 주문내역 카드형 UI 스타일 */
+.order-list-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+.order-naver-card {
+    width: 100%;
+    max-width: 800px;
+    margin: 24px auto;
+    border: 1px solid #eee; border-radius: 12px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 24px; position: relative;
+}
+.order-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+/* 상품준비중 */
+.order-status[data-status="0"] {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 배송중 */
+.order-status[data-status="1"] {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 배송완료 */
+.order-status[data-status="2"] {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 구매확정 */
+.order-status[data-status="3"] {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 반품 처리 중 */
+.order-status[data-status="6"] {
+    color: #e74c3c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 반품 완료 */
+.order-status[data-status="7"] {
+    color: #143ef7;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 취소 처리 중, 주문취소 */
+.order-status[data-status="8"] {
+    color: #e74c3c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.order-status[data-status="9"] {
+    color: #143ef7;
+    font-size: 16px;
+    font-weight: bold;
+}
+/* .order-status {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+.order-status.order-cancel {
+    color: #e74c3c;
+} */
+.order-seller { color: #888; font-size: 14px; text-decoration: none; }
+.order-close-btn { background: none; border: none; font-size: 20px; color: #bbb; cursor: pointer; }
+.order-card-body { display: flex; align-items: center; }
+.order-thumb { width: 80px; height: 80px; border-radius: 8px; object-fit: cover; margin-right: 20px; }
+.order-info { flex: 1; }
+.order-date { color: #888; font-size: 13px; margin-bottom: 2px; }
+.order-title { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
+.order-price { font-size: 18px; font-weight: bold; color: #222; margin-bottom: 4px; }
+.price { margin-right: 8px; }
+.pay-icon { background: #000000; color: #fff; border-radius: 4px; padding: 2px 8px; font-size: 13px; }
+.order-detail-link { color: #000000; font-size: 14px; text-decoration: none; }
+.order-card-footer { display: flex; gap: 12px; margin-top: 18px; }
+.order-btn { flex: 1; padding: 12px 0; border: 1px solid #ddd; border-radius: 8px; background: #fafbfc; font-size: 15px; cursor: pointer; }
+.order-btn:hover { background: #f0f5f9; } 

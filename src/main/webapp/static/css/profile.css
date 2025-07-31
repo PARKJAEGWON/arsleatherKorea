@@ -1,0 +1,207 @@
+.profile-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-title {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin: 32px 0 16px 0;
+    color: #222;
+    text-align: center;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 16px 0;
+    justify-content: flex-start;
+}
+
+.profile-row:last-child {
+    border-bottom: none;
+}
+
+.profile-label {
+    width: 120px;
+    color: #222;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.profile-value {
+    flex: 1;
+    color: #333;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+}
+
+.profile-gender.female { color: #e57373; }
+.profile-gender.male { color: #1976d2; }
+
+.profile-btns-flex {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.profile-btn {
+    padding: 10px 28px;
+    font-size: 1rem;
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.profile-btn.withdraw {
+    background: #fff;
+    color: #000;
+    border: 1.5px solid #000;
+}
+
+.profile-btn:hover { background: #333; }
+.profile-btn.withdraw:hover { background: #f5f5f5; }
+
+.profile-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.profile-modify-btn,
+.profile-withdraw-btn {
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.profile-modify-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.profile-modify-btn:hover {
+    background-color: #0056b3;
+}
+
+.profile-withdraw-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.profile-withdraw-btn:hover {
+    background-color: #c82333;
+}
+
+.profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    padding: 0 2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    padding: 2rem 0;
+}
+
+.center-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: transparent;
+}
+
+/* 우편번호 입력 및 버튼 스타일 회원가입과 통일 */
+#zipInput {
+    width: 80px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 1rem;
+    outline: none;
+    color: #333;
+    background: #fff;
+    transition: border 0.2s, background 0.2s;
+}
+#zipInput:focus {
+    border: 1.5px solid #000;
+    background: #fff;
+}
+
+#zipSearchBtn {
+    padding: 12px 16px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#zipSearchBtn:hover {
+    background: #333;
+}
+
+#addrInput, #addrDetailInput {
+    width: 220px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 1rem;
+    outline: none;
+    color: #333;
+    background: #fff;
+    transition: border 0.2s, background 0.2s;
+    margin-bottom: 4px;
+}
+#addrInput:focus, #addrDetailInput:focus {
+    border: 1.5px solid #000;
+    background: #fff;
+}
+
+/* 아이콘과 텍스트, 값 사이 간격 */
+.profile-value i {
+  margin-right: 6px;
+}
+/* .profile-value span {
+    margin-right: 6px;
+}  <= gap으로 대체하므로 주석처리 */
+#marketingView i,
+#marketingView span {
+  margin-right: 4px;
+}
+#marketingModify label {
+  margin-right: 12px;
+}
+
+#withdrawForm {
+    display: inline-block;
+} 

@@ -1,0 +1,151 @@
+.signup-container {
+    width: 360px;
+    margin: 120px auto 120px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signup-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 32px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.signup-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 1rem;
+    outline: none;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    transition: border 0.2s, background 0.2s;
+}
+.input-group input:focus,
+.input-group select:focus {
+    border: 1.5px solid #000;
+    background: #fff;
+}
+.gender-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.gender-label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.gender-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+.gender-radio {
+    display: none;
+}
+.custom-radio {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    background: transparent;
+    border: 1.5px solid #bbb;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border 0.2s;
+}
+.gender-radio:checked + .custom-radio {
+    background: transparent;
+    border: none;
+}
+.gender-radio:checked + .custom-radio::after {
+    content: '\2714';
+    color: #222;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 0px;
+    top: -10px;
+}
+.phone-group,
+.zip-group {
+    display: flex;
+    gap: 8px;
+}
+.phone-verify-btn,
+.zip-search-btn {
+    padding: 12px 16px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.phone-verify-btn:hover,
+.zip-search-btn:hover {
+    background: #333;
+}
+.agree-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.98rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+.signup-btn {
+    width: 100%;
+    padding: 13px 0;
+    background: #000;
+    color: #fff;
+    border: none;
+    /* border-radius: 6px; */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    transition: background 0.2s;
+}
+.signup-btn:hover {
+    background: #333;
+}
+body {
+    background: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+}
+
+/* 에러 스타일 추가 */
+.input-error {
+    border-color: red !important;
+}
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.gender-text {
+    font-family: 'Allura', cursive;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-right: 6px;
+    color: #222;
+    font-style: normal;
+    transform: none;
+} 

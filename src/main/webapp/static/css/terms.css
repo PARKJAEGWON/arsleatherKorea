@@ -1,0 +1,44 @@
+/* 약관 팝업 스타일 */
+.terms-popup {
+    padding: 20px;
+    margin: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.terms-popup h2 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.terms-popup .content {
+    height: calc(100vh - 110px);
+    overflow-y: auto;
+    padding: 15px;
+    line-height: 1.6;
+}
+
+.terms-popup .close-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: #fff;
+    padding: 10px 0;
+}
+
+.terms-popup .close-btn button {
+    padding: 8px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.terms-popup .close-btn button:hover {
+    background: #555;
+} 
