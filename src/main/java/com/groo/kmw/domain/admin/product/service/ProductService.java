@@ -31,23 +31,30 @@ public class ProductService {
 
     //파일 저장
     public String saveFile(MultipartFile multipartFile){
-        if(multipartFile == null || multipartFile.isEmpty())
-            return null;
+        if(multipartFile == null || multipartFile.isEmpty()) {
+            throw new RuntimeException("파일이 선택되지 않았습니다.");
+        }
             
         // 업로드 디렉토리 확인 및 생성
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {
-            uploadDir.mkdirs();
+            boolean created = uploadDir.mkdirs();
+            if (!created) {
+                throw new RuntimeException("업로드 디렉토리 생성 실패: " + uploadPath);
+            }
         }
         
         String originalName = multipartFile.getOriginalFilename();
+        if (originalName == null || originalName.lastIndexOf(".") == -1) {
+            throw new RuntimeException("올바르지 않은 파일 형식입니다.");
+        }
+
         String uuid = UUID.randomUUID().toString();
         String extension = originalName.substring(originalName.lastIndexOf("."));
         String savedName = uuid + extension;
-        String savedPath = new File(uploadPath, savedName).getPath();
+        File destFile = new File(uploadDir, savedName);
         
         try {
-            File destFile = new File(savedPath);
             multipartFile.transferTo(destFile);
             
             // 파일이 실제로 저장되었는지 확인
@@ -55,8 +62,10 @@ public class ProductService {
                 throw new RuntimeException("파일이 저장되지 않았습니다.");
             }
             
-            return "/uploads/" + savedName;  // URL 접두사 수정
+            System.out.println("파일 저장 성공: " + destFile.getAbsolutePath());  // 디버깅용
+            return "/uploads/" + savedName;
         } catch (IOException e) {
+            e.printStackTrace();  // 스택 트레이스 출력
             throw new RuntimeException("파일 저장 실패: " + e.getMessage());
         }
     }

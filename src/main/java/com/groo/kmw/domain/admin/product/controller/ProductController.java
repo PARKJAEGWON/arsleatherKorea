@@ -84,7 +84,10 @@ public class ProductController {
             return "redirect:/admin/kmw/login";
         }
         
-        try{
+        try {
+            if(productCreateRequest.getMainImage() == null || productCreateRequest.getMainImage().isEmpty()) {
+                return "redirect:/admin/kmw/product/create?error=메인 이미지는 필수입니다.";
+            }
             
             this.productService.create(
                     productCreateRequest.getProductCode(),
@@ -101,10 +104,10 @@ public class ProductController {
                     productCreateRequest.getProductGender(),
                     productCreateRequest.isProductIsSeasonal()
             );
-//            httpServletRequest.setAttribute("message","상품이 성공적으로 등록되었습니다.");
             return "redirect:/admin/kmw/product";
-        }catch (Exception e){
-            return "redirect:/admin/kmw/login";
+        } catch (RuntimeException e) {
+            e.printStackTrace(); // 로그 확인을 위해 추가
+            return "redirect:/admin/kmw/product/create?error=" + e.getMessage();
         }
     }
 //    @GetMapping("update")
