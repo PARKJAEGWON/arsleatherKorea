@@ -61,30 +61,30 @@ public class ProductController {
     @PostMapping("/create")
     public String create(@Valid @ModelAttribute ProductCreateRequest productCreateRequest, BindingResult bindingResult, HttpServletRequest httpServletRequest) {
 
-        if(bindingResult.hasErrors()){
-            return "admin/product/adminProductCreate";
-        }
-
         Cookie[] cookies = httpServletRequest.getCookies();
-        String adminAccessToken = null;
+        Long adminId = null;
 
-        if(cookies != null){
-            for(Cookie cookie: cookies){
-                if(cookie.getName().equals("adminAccessToken")){
-                    adminAccessToken = cookie.getValue();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("adminAccessToken")) {
+                    String token = cookie.getValue();
+
+                    //토큰 유효성 검증으로 보완성을 높여주는게 좋음 습관들여야함
+                    if (!jwtProvider.verify(token)) {
+                        return "redirect:/admin/kmw/login";
+                    }
+                    //페이로드안에 있는 json형식의 "" 부분이 키 값이 오브젝트
+                    Map<String, Object> claims = jwtProvider.getClaims(token);
+                    adminId = Long.valueOf(claims.get("adminId").toString());
                     break;
                 }
             }
         }
-        if(adminAccessToken == null){
+        if (adminId == null) {
             return "redirect:/admin/kmw/login";
         }
+        
         try{
-            if (!jwtProvider.verify(adminAccessToken)) {
-                return "redirect:/admin/kmw/login";
-            }
-            Map<String, Object> claims = jwtProvider.getClaims(adminAccessToken);
-            Long adminId = Long.valueOf(claims.get("adminId").toString());
             
             this.productService.create(
                     productCreateRequest.getProductCode(),
