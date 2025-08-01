@@ -28,7 +28,7 @@ spring:
   # 정적 리소스 설정 추가
   web:
     resources:
-      static-locations: classpath:/webapp/static/,file:///D:/kmw/upload/
+      static-locations: classpath:/webapp/static/,file:./upload/
 file:
   upload:
     path: ./upload/

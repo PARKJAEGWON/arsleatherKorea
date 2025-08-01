@@ -44,7 +44,7 @@ public class ProductService {
         String uuid = UUID.randomUUID().toString();
         String extension = originalName.substring(originalName.lastIndexOf("."));
         String savedName = uuid + extension;
-        String savedPath = uploadPath + savedName;
+        String savedPath = new File(uploadPath, savedName).getPath();
         
         try {
             File destFile = new File(savedPath);
