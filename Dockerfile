@@ -15,8 +15,7 @@ COPY --from=builder /app/build/libs/*.war /usr/local/tomcat/webapps/ROOT.war
 
 # 업로드 디렉토리 생성 및 권한 설정
 RUN mkdir -p /usr/local/tomcat/webapps/upload \
-    && chmod -R 755 /usr/local/tomcat/webapps/upload \
-    && chown -R tomcat:tomcat /usr/local/tomcat/webapps/upload
+    && chmod -R 755 /usr/local/tomcat/webapps/upload
 
 # 톰캣 포트 설정 (server.xml 수정)
 RUN sed -i 's/port="8080"/port="8090"/' /usr/local/tomcat/conf/server.xml

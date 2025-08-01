@@ -36,7 +36,7 @@ logging:
   level:
     root: INFO
     com.groo.kmw: INFO
-    org.hibernate.SQL: INFO
-    org.hibernate.orm.jdbc: INFO
+    org.hibernate.SQL: INFO    org.hibernate.orm.jdbc: INFO
     org.springframework.transaction: INFO
     org.springframework.web: INFO
+
