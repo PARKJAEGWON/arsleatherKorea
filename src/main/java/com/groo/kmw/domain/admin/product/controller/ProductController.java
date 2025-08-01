@@ -107,7 +107,9 @@ public class ProductController {
             return "redirect:/admin/kmw/product";
         } catch (RuntimeException e) {
             e.printStackTrace(); // 로그 확인을 위해 추가
-            return "redirect:/admin/kmw/product/create?error=" + e.getMessage();
+            // URL 인코딩 처리
+            String errorMessage = "파일 업로드에 실패했습니다";
+            return "redirect:/admin/kmw/product/create?error=" + errorMessage;
         }
     }
 //    @GetMapping("update")
