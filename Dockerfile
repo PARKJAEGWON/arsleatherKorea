@@ -7,15 +7,22 @@ RUN gradle build -x test --no-daemon
 # 실행 스테이지
 FROM tomcat:10.1.19-jdk21-temurin
 
+# 업로드 디렉토리 생성
+RUN mkdir -p /usr/local/tomcat/webapps/upload \
+    && chmod -R 755 /usr/local/tomcat/webapps/upload
+
+# upload 디렉토리 백업
+RUN cp -r /usr/local/tomcat/webapps/upload /tmp/upload_backup
+
 # 기본 웹앱 제거 (충돌 방지)
 RUN rm -rf /usr/local/tomcat/webapps/*
 
+# upload 디렉토리 복원
+RUN cp -r /tmp/upload_backup /usr/local/tomcat/webapps/upload \
+    && rm -rf /tmp/upload_backup
+
 # WAR 파일 복사
 COPY --from=builder /app/build/libs/*.war /usr/local/tomcat/webapps/ROOT.war
-
-# 업로드 디렉토리 생성 및 권한 설정
-RUN mkdir -p /usr/local/tomcat/webapps/upload \
-    && chmod -R 755 /usr/local/tomcat/webapps/upload
 
 # 톰캣 포트 설정 (server.xml 수정)
 RUN sed -i 's/port="8080"/port="8090"/' /usr/local/tomcat/conf/server.xml

@@ -28,15 +28,17 @@ spring:
   # 정적 리소스 설정 추가
   web:
     resources:
-      static-locations: classpath:/webapp/static/,file:./upload/
+      static-locations: classpath:/webapp/static/,file:/usr/local/tomcat/webapps/upload/
+
 file:
   upload:
     path: /usr/local/tomcat/webapps/upload/
+
 logging:
   level:
     root: INFO
     com.groo.kmw: INFO
-    org.hibernate.SQL: INFO    org.hibernate.orm.jdbc: INFO
+    org.hibernate.SQL: INFO
+    org.hibernate.orm.jdbc: INFO
     org.springframework.transaction: INFO
     org.springframework.web: INFO
-
