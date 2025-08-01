@@ -13,9 +13,10 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 # WAR 파일 복사
 COPY --from=builder /app/build/libs/*.war /usr/local/tomcat/webapps/ROOT.war
 
-# 업로드 디렉토리 생성
-RUN mkdir -p /app/upload \
-    && chmod -R 755 /app/upload
+# 업로드 디렉토리 생성 및 권한 설정
+RUN mkdir -p /usr/local/tomcat/webapps/upload \
+    && chmod -R 755 /usr/local/tomcat/webapps/upload \
+    && chown -R tomcat:tomcat /usr/local/tomcat/webapps/upload
 
 # 톰캣 포트 설정 (server.xml 수정)
 RUN sed -i 's/port="8080"/port="8090"/' /usr/local/tomcat/conf/server.xml
@@ -25,8 +26,8 @@ ENV SPRING_PROFILES_ACTIVE=prod
 ENV CATALINA_OPTS="-Dfile.encoding=UTF-8 -Dspring.profiles.active=prod"
 ENV TZ=Asia/Seoul
 
-# 볼륨 설정
-VOLUME ["/app/upload"]
+# 볼륨 설정 - 업로드 디렉토리를 영구 저장소로 설정
+VOLUME ["/usr/local/tomcat/webapps/upload"]
 
 EXPOSE 8090
 CMD ["catalina.sh", "run"]
