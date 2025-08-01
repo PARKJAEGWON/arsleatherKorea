@@ -124,11 +124,9 @@ public class AdminService {
             throw new RuntimeException("관리자 토큰이 아닙니다.");
         }
 
-        long adminId = (int) payloadBody.get("adminId");
+        long adminId = Long.valueOf(payloadBody.get("adminId").toString());
         String adminLoginId = (String) payloadBody.get("adminLoginId");
-
-        Admin admin = adminRepository.findByAdminLoginId(adminLoginId)
-                .orElseThrow(() -> new RuntimeException("관리자를 찾을 수 없습니다."));
+        String adminName = (String) payloadBody.get("adminName");
 
         List<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
