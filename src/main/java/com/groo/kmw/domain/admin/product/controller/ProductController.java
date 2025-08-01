@@ -1,7 +1,6 @@
 package com.groo.kmw.domain.admin.product.controller;
 
-import com.groo.kmw.domain.admin.admin.entity.Admin;
-import com.groo.kmw.domain.admin.admin.service.AdminService;
+
 import com.groo.kmw.domain.admin.product.dto.request.ProductCreateRequest;
 import com.groo.kmw.domain.admin.product.dto.request.ProductUpdateRequest;
 import com.groo.kmw.domain.admin.product.entity.Product;
@@ -28,7 +27,7 @@ public class ProductController {
 
     private final ProductService productService;
     private final JwtProvider jwtProvider;
-    private final AdminService adminService;
+
 
     //상품 리스트페이지로 이동
     @GetMapping("")
@@ -81,13 +80,12 @@ public class ProductController {
             return "redirect:/admin/kmw/login";
         }
         try{
-            Map<String, Object> claims = jwtProvider.getClaims(adminAccessToken);
-            Long adminId = ((Integer) claims.get("adminId")).longValue();
-            Admin admin = adminService.findById(adminId);
-
-            if(admin == null){
+            if (!jwtProvider.verify(adminAccessToken)) {
                 return "redirect:/admin/kmw/login";
             }
+            Map<String, Object> claims = jwtProvider.getClaims(adminAccessToken);
+            Long adminId = Long.valueOf(claims.get("adminId").toString());
+            
             this.productService.create(
                     productCreateRequest.getProductCode(),
                     productCreateRequest.getProductName(),
