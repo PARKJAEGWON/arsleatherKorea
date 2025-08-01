@@ -57,9 +57,10 @@
                             <td>${product.productName}</td>
                             <td>
                                 <c:choose>
-                                    <c:when test="${product.productCategory == 0}">서류가방</c:when>
-                                    <c:when test="${product.productCategory == 1}">백팩</c:when>
-                                    <c:when test="${product.productCategory == 2}">핸드백</c:when>
+                                    <c:when test="${product.productCategory == 0}">브리프케이스</c:when>
+                                    <c:when test="${product.productCategory == 1}">토트백</c:when>
+                                    <c:when test="${product.productCategory == 2}">백팩</c:when>
+                                    <c:when test="${product.productCategory == 3}">핸드백</c:when>
                                     <c:otherwise>기타</c:otherwise>
                                 </c:choose>
                             </td>

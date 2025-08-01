@@ -30,9 +30,10 @@
             <div class="form-group">
                 <label>카테고리</label>
                 <select name="productCategory" required>
-                    <option value="0">서류가방</option>
-                    <option value="1">백팩</option>
-                    <option value="2">핸드백</option>
+                    <option value="0">브리프케이스</option>
+                    <option value="1">토트백</option>
+                    <option value="2">백팩</option>
+                    <option value="3">핸드백</option>
                 </select>
             </div>
             <div class="form-group">

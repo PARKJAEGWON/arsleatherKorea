@@ -22,7 +22,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .resourceChain(true);
 
         registry.addResourceHandler("/uploads/**")
-                .addResourceLocations("file:D:/kmw/uploads/")
+                .addResourceLocations("file:./upload/")
                 .setCachePeriod(3600)  // 이미지도 캐시 설정
                 .resourceChain(true);
     }

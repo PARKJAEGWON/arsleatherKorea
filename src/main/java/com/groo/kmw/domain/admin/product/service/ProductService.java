@@ -33,22 +33,31 @@ public class ProductService {
     public String saveFile(MultipartFile multipartFile){
         if(multipartFile == null || multipartFile.isEmpty())
             return null;
-        //업로드 된 파일의 원본 이름을 가져옴 (파일 확장자를 추출하거나 로그를 남길때 유용하다함)
+            
+        // 업로드 디렉토리 확인 및 생성
+        File uploadDir = new File(uploadPath);
+        if (!uploadDir.exists()) {
+            uploadDir.mkdirs();
+        }
+        
         String originalName = multipartFile.getOriginalFilename();
-        //충돌 방지를 위해 UUID를 생성함 (여러 사용자가 같은 이름의 파일을 업로드해도 서로 다른이름으로 저장되도록함!)
         String uuid = UUID.randomUUID().toString();
-        //원본 파일명에서 확장자 부분만 추출
         String extension = originalName.substring(originalName.lastIndexOf("."));
-        // 저장될 파일 이름을 uuid+ 확장자 형태로 생성
         String savedName = uuid + extension;
-        //최종 저장 경로 설정
         String savedPath = uploadPath + savedName;
-        try{
-            multipartFile.transferTo(new File(savedPath));
-            //업로드된 파일의 내용을 위에서 만든 경로에 실제로 저장 transferTo는 파일 복사 또는 이동작업을 수행함
-            return "/" + savedName;
-        }catch (IOException e){
-            throw new RuntimeException("파일 저장 실패:" + e.getMessage());
+        
+        try {
+            File destFile = new File(savedPath);
+            multipartFile.transferTo(destFile);
+            
+            // 파일이 실제로 저장되었는지 확인
+            if (!destFile.exists()) {
+                throw new RuntimeException("파일이 저장되지 않았습니다.");
+            }
+            
+            return "/uploads/" + savedName;  // URL 접두사 수정
+        } catch (IOException e) {
+            throw new RuntimeException("파일 저장 실패: " + e.getMessage());
         }
     }
 
@@ -75,8 +84,8 @@ public class ProductService {
 
         product.setProductCode(productCode);
         product.setProductName(productName);
-        product.setProductCategory(productBrand);
-        product.setProductCategory(productCategory);
+        product.setProductBrand(productBrand);        // 브랜드 설정 수정
+        product.setProductCategory(productCategory);   // 카테고리 설정
         product.setProductMaterial(productMaterial);
         product.setProductColor(productColor);
 //        product.setProductStock(productStock);

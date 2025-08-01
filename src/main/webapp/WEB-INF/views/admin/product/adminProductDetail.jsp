@@ -38,9 +38,10 @@
                 <tr><th>카테고리</th>
                     <td>
                         <c:choose>
-                            <c:when test="${product.productCategory == 0}">서류가방</c:when>
-                            <c:when test="${product.productCategory == 1}">백팩</c:when>
-                            <c:when test="${product.productCategory == 2}">핸드백</c:when>
+                            <c:when test="${product.productCategory == 0}">브리프케이스</c:when>
+                            <c:when test="${product.productCategory == 1}">토트백</c:when>
+                            <c:when test="${product.productCategory == 2}">백팩</c:when>
+                            <c:when test="${product.productCategory == 3}">핸드백</c:when>
                             <c:otherwise>기타</c:otherwise>
                         </c:choose>
                     </td>
@@ -119,9 +120,10 @@
                 <div class="form-group">
                     <label for="productCategory">카테고리</label>
                     <select id="productCategory" name="productCategory" required>
-                        <option value="0" ${product.productCategory == 0 ? 'selected' : ''}>서류가방</option>
-                        <option value="1" ${product.productCategory == 1 ? 'selected' : ''}>백팩</option>
-                        <option value="2" ${product.productCategory == 2 ? 'selected' : ''}>핸드백</option>
+                        <option value="0" ${product.productCategory == 0 ? 'selected' : ''}>브리프케이스</option>
+                        <option value="1" ${product.productCategory == 1 ? 'selected' : ''}>토트백</option>
+                        <option value="2" ${product.productCategory == 2 ? 'selected' : ''}>백팩</option>
+                        <option value="2" ${product.productCategory == 3 ? 'selected' : ''}>핸드백</option>
                     </select>
                 </div>
                 
