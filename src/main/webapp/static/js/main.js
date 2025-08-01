@@ -45,22 +45,48 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const recommendedSwipers = document.querySelectorAll('.recommended-swiper');
-    recommendedSwipers.forEach((swiperEl, index) => {
-        new Swiper(swiperEl, {
-            slidesPerView: 4,
-            spaceBetween: 20,
-            navigation: {
-                nextEl: swiperEl.querySelector('.swiper-button-next'),
-                prevEl: swiperEl.querySelector('.swiper-button-prev')
-            },
-            breakpoints: {
-                1024: { slidesPerView: 4 },
-                768: { slidesPerView: 3 },
-                480: { slidesPerView: 2 },
-                0: { slidesPerView: 1 }
-            }
-        });
+    // 시즌 섹션의 스와이퍼 (4개씩 보이기)
+    new Swiper('.featured-products-season .recommended-swiper', {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.featured-products-season .swiper-button-next',
+            prevEl: '.featured-products-season .swiper-button-prev'
+        },
+        breakpoints: {
+            1024: { slidesPerView: 4 },
+            768: { slidesPerView: 3 },
+            480: { slidesPerView: 2 },
+            0: { slidesPerView: 1 }
+        }
+    });
+
+    // MEN 섹션의 스와이퍼 (2개씩 보이기)
+    new Swiper('.featured-products-men .recommended-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.featured-products-men .swiper-button-next',
+            prevEl: '.featured-products-men .swiper-button-prev'
+        },
+        breakpoints: {
+            768: { slidesPerView: 2 },
+            0: { slidesPerView: 1 }
+        }
+    });
+
+    // WOMEN 섹션의 스와이퍼 (2개씩 보이기)
+    new Swiper('.featured-products-women .recommended-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.featured-products-women .swiper-button-next',
+            prevEl: '.featured-products-women .swiper-button-prev'
+        },
+        breakpoints: {
+            768: { slidesPerView: 2 },
+            0: { slidesPerView: 1 }
+        }
     });
 });
 

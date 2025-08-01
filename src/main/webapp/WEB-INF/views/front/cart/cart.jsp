@@ -5,7 +5,6 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="context-path" content="${pageContext.request.contextPath}">
     <title>장바구니 - KMW</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/styles.css">

@@ -259,13 +259,60 @@ body {
 }
 
 .split-content .swiper-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    display: flex;
+}
+
+.split-content .swiper {
+    width: 100%;
+    overflow: hidden;
 }
 
 .split-content .swiper-slide {
-    width: 100% !important;
+    width: calc(50% - 10px) !important;  /* 2개씩 보이도록 50% 설정, 간격 고려 */
+    flex-shrink: 0;
+}
+
+.split-content .product-card {
+    width: 100%;
+    display: block;
+}
+
+.split-content .product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .split-content .swiper-slide {
+        width: 100% !important;  /* 모바일에서는 1개씩 */
+    }
+}
+
+/* 스와이퍼 버튼만 추가 */
+.split-content .swiper-button-next,
+.split-content .swiper-button-prev {
+    color: #000;
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.split-content .swiper-button-next:after,
+.split-content .swiper-button-prev:after {
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .split-content .swiper-slide {
+        width: 280px !important;
+    }
+    
+    .split-content .product-image {
+        height: 280px;
+    }
 }
 
 @media (max-width: 768px) {

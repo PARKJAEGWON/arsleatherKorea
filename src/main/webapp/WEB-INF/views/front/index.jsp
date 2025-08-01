@@ -5,7 +5,6 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARS LEATHER</title>
     <!-- <%-- 톰캣 내부에서 서버xml이랑 컨테스트xml에서 ${pageContext.request.contextPath} 확인가능 이녀석이 환경에 맞춰 경로를 유동적으로 찾아줌 --%> -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/styles.css">
@@ -69,12 +68,12 @@
                 <img src="${pageContext.request.contextPath}/static/img/men.jpg">
             </div>
             <div class="split-content">
-                <section class="featured-products-women">
+                <section class="featured-products-men">
                     <h2>MEN</h2>
                     <p class="index-product-description">도심의 분주함 속에서도 중심을 잃지 않는 남성을 위해, <br>고요한 힘과 균형감을 담아 설계된 가방입니다. 전통적인 형태에 현대적인 감성을 더해, <br>시간을 초월한 스타일을 제안합니다.</p>
                     <div class="swiper recommended-swiper">
                         <div class="swiper-wrapper">
-                            <c:forEach var="product" items="${menProducts}" begin="0" end="2">
+                            <c:forEach var="product" items="${menProducts}">
                                 <div class="swiper-slide">
                                     <a href="${pageContext.request.contextPath}/productPost/detail?id=${product.id}" class="product-card">
                                         <img src="${pageContext.request.contextPath}${product.mainImageUrl}" alt="${product.productName}" class="product-image">
@@ -91,12 +90,12 @@
 
         <section class="split-section">
             <div class="split-content">
-                <section class="featured-products-men">
+                <section class="featured-products-women">
                     <h2>WOMEN</h2>
                     <p class="index-product-description">유려한 곡선과 절제된 디테일이 살아 있는 디자인. <br>실용성과 예술적 감각의 조화 속에서, <br>여성의 태도와 스타일을 완성하는 가방 컬렉션을 제안합니다.</p>
                     <div class="swiper recommended-swiper">
                         <div class="swiper-wrapper">
-                            <c:forEach var="product" items="${womenProducts}" begin="0" end="2">
+                            <c:forEach var="product" items="${womenProducts}">
                                 <div class="swiper-slide">
                                     <a href="${pageContext.request.contextPath}/productPost/detail?id=${product.id}" class="product-card">
                                         <img src="${pageContext.request.contextPath}${product.mainImageUrl}" alt="${product.productName}" class="product-image">
