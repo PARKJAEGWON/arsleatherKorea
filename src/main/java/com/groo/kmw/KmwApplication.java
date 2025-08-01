@@ -7,7 +7,8 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-import javax.annotation.PostConstruct;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import java.io.File;
 
 @EnableJpaAuditing
@@ -17,16 +18,18 @@ public class KmwApplication extends SpringBootServletInitializer {
     @Value("${file.upload.path}")
     private String uploadPath;
 
-    @PostConstruct
-    public void init() {
-        try {
-            File uploadDir = new File(uploadPath);
-            if (!uploadDir.exists()) {
-                uploadDir.mkdirs();
+    @Bean
+    public CommandLineRunner init() {
+        return args -> {
+            try {
+                File uploadDir = new File(uploadPath);
+                if (!uploadDir.exists()) {
+                    uploadDir.mkdirs();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        };
     }
 
     @Override
