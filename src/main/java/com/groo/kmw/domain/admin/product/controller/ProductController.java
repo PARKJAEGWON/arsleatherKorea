@@ -145,8 +145,12 @@ public class ProductController {
             if (!jwtProvider.verify(adminAccessToken)) {
                 return "redirect:/admin/kmw/login";
             }
+            Map<String, Object> claims = jwtProvider.getClaims(adminAccessToken);
+            Long adminId = Long.valueOf(claims.get("adminId").toString());
+
             this.productService.update(
                     productUpdateRequest.getProductId(),
+                    adminId,
                     productUpdateRequest.getProductName(),
                     productUpdateRequest.getProductPrice(),
                     productUpdateRequest.getProductCategory(),

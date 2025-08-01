@@ -135,8 +135,8 @@ public class ProductService {
 
     //상품 수정
     @Transactional
-    public Product update(Long productId, String productName, int productPrice,
-                          int productCategory,String productColor, String productMaterial,
+    public Product update(Long productId, Long adminId, String productName, int productPrice,
+                          int productCategory, String productColor, String productMaterial,
                           int productGender, boolean productIsSeasonal, String productDescription,
                           int productStatus){
 
